@@ -19,7 +19,9 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "rootDir": ".",
+    "baseUrl": "."
   },
   "include": ["vite.config.ts"]
 }
