@@ -11,4 +11,10 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
     },
   },
+  server: {
+    // 端口号
+    port: 8080,
+    // 是否自动打开浏览器
+    open: true,
+  },
 });

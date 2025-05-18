@@ -3,18 +3,27 @@
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
 
-    /* Linting */
+    "target": "ESNext", //编译的目标版本
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedLocals": true, //报告未使用的局部变量
+    "noUnusedParameters": true, //报告未使用的函数参数
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-
-    "baseUrl": "./",
+    "sourceMap": true, //生成源映射文件
+    "resolveJsonModule": true, //允许导入json文件
+    "removeComments": true, //在ts代码编译为js代码时，删除注释
+    "allowJs": true, //允许编译js文件
+    "checkJs": true, //检查js文件
+    "types": ["vite/client"], //添加vite的类型支持
+    "skipLibCheck": true, //跳过库文件的类型检查,用于加快编译速度 （默认已配置）
+    //在客户端的话我们要先设置一下lib，比如说我们要使用ESNext的语法，如果我们不加的话，那么在使用ESNext的特性时可能会遇到问题，比如使用async/await，这个时候编辑器就会提示报错
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/*.d.ts"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/*.d.ts"],
+  "exclude": ["node_modules", "dist", "build"]
 }
